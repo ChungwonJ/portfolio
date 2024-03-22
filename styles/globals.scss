@@ -1,0 +1,9 @@
+@import '/styles/reset.scss';
+@import '/styles/components/template/template.scss';
+@import '/styles/components/organism/organism.scss';
+
+section{
+  width: 1200px;
+  height: 100vh;
+  background-color: beige;
+}
