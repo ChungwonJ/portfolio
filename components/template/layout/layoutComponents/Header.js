@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useState, useEffect } from "react";
 
@@ -7,13 +8,13 @@ function Header(props) {
   return (
     <>
       <header>
-        <section className="headerSection">
-          <div className="headerGrid">
-            <div>로고</div>
-            <div>메뉴</div>
-            <div>링크</div>
-          </div>
-        </section>
+        <div className="headerGrid">
+          <Link href={''}>Home</Link>
+          <Link href={''}>About</Link>
+          <Link href={''}>Work</Link>
+          <Link href={''}>Side</Link>
+          <Link href={''}>Contact</Link>
+        </div>
       </header>
     </>
   );
