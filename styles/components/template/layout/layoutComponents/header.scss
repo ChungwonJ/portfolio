@@ -2,6 +2,11 @@ header{
   position: fixed;
   width: 100%;
   z-index: 10;
+  transition: all 0.5s ;
+}
+
+.headerChange{
+  background-color: rgba($color: #fff, $alpha: 0.8);
 }
 
 .headerGrid{
@@ -12,5 +17,17 @@ header{
 
   &>a{
     color: #fff;
+  }
+}
+
+.headerGrid.active{
+  &>a{
+    color: #333;
+  }
+}
+
+@media (max-width: 1199px) {
+  .headerGrid{
+    width: 100%;
   }
 }

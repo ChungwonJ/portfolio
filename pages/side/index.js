@@ -1,8 +1,12 @@
 import React from 'react'
+import Result from '@/components/template/Result'
+import { WORKLIST } from '@/define'
 
 function Side() {
   return (
-    <div>Side</div>
+    <>
+      <Result title={'SideProject'} CARDITEM={WORKLIST}/>
+    </>
   )
 }
 

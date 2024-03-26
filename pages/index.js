@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
@@ -6,10 +7,17 @@ import Introduction from './Introduction'
 import Work from './work'
 import Contact from './contact'
 import Side from './side'
+import AOS from "aos";
+import "aos/dist/aos.css";
+import Spiner from '@/components/atoms/Spiner'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(false);
+  useEffect(() => {
+    AOS.init();
+  })
   return (
     <>
       <Head>
@@ -19,21 +27,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div>
+      <>
         <Port />
-        <section>
-          <Introduction />
-        </section>
-        <section>
-          <Work />
-        </section>
-        <section>
-          <Side />
-        </section>
-        <section>
-          <Contact />
-        </section>
-      </div>
+        <Introduction />
+        <Work />
+        <Side />
+        <Contact setIsLoading={setIsLoading} />
+        {isLoading && (<Spiner />)}
+      </>
     </>
   )
 }

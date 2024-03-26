@@ -1,9 +1,57 @@
 @import '/styles/reset.scss';
 @import '/styles/components/template/template.scss';
 @import '/styles/components/organism/organism.scss';
+@import '/styles/components/mocules/mocules.scss';
+@import '/styles/components/atoms/atoms.scss';
+@import '/styles/pages/pages.scss';
 
 section{
   width: 1200px;
-  height: 100vh;
-  background-color: beige;
+}
+
+.container{
+  padding: 60px 36px;
+}
+
+.button {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 50px;
+  color: #FFF;
+  border-radius: 5px;
+  transition: all 0.2s ;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btnBlueGreen {
+  background: #00AE68;
+}
+
+.btnBlueGreen.btnPush {
+  box-shadow: 0px 5px 0px 0px #007144;
+}
+
+.btnPush:hover {
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.btnBlueGreen.btnPush:hover {
+  box-shadow: 0px 0px 0px 0px #007144;
+}
+
+@media (max-width: 1199px) {
+  section{
+    width: 100%;
+  }
+}
+
+@media (max-width: 499px) {
+  .container{
+    padding: 10px 20px;
+  }
 }

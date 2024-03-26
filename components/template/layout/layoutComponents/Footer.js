@@ -4,7 +4,16 @@ import Router from "next/router";
 function Footer() {
   return (
     <>
-      <footer>푸터</footer>
+      <footer>
+        <section>
+          <div className="footerGrid">
+            <span>Copyright JungChungWonPotFolio All rights reserved.</span>
+            <div>
+            
+            </div>
+          </div>
+        </section>
+      </footer>
     </>
   );
 }

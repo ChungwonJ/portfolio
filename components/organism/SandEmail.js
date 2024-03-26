@@ -1,31 +1,14 @@
 import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 
-export default function SendEmail() {
+export default function SendEmail(props) {
   const form = useRef();
-  const [selectedItem, setSelectedItem] = useState('아이폰1');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phone: '',
+    message: '',
   });
-  const options = [
-    { value: '아이폰1', name: '아이폰1' },
-    { value: '아이폰2', name: '아이폰2' },
-    { value: '아이폰3', name: '아이폰3' }
-  ];
-
-  const [isLoading, setIsLoading] = useState(false);
-
-  const inputFields = [
-    { label: 'Name', type: 'text', name: 'name' },
-    { label: 'Email', type: 'email', name: 'email' },
-    { label: '전화번호', type: 'text', name: 'phone' },
-  ];
-
-  const handleSelectChange = (e) => {
-    setSelectedItem(e.target.value);
-  };
+  const { setIsLoading } = props;
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -52,31 +35,65 @@ export default function SendEmail() {
   };
 
   return (
-    <form ref={form} onSubmit={sendEmail}>
-      {inputFields.map((item, index) => (
-        <div key={index}>
-          <label>{item.label}</label>
-          <input
-            type={item.type}
-            name={item.name}
-            value={formData[item.name]}
-            onChange={handleInputChange}
-          />
+    <>
+      <form
+        className='emailForm'
+        ref={form}
+        onSubmit={sendEmail}
+      >
+        <div>
+          <div className="inputGrid">
+            <input
+              className='inputActive'
+              type="text"
+              name="name"
+              value={formData.name}
+              placeholder='이름을 입력해주세요'
+              onChange={handleInputChange}
+            />
+            <span className="focusBorder">
+              <i></i>
+            </span>
+          </div>
         </div>
-      ))}
-
-      <select name="select" id="" value={selectedItem} onChange={handleSelectChange}>
-        {options.map((item, index) => (
-          <option
-            key={index}
-            value={item.value}
-          >
-            {item.name}
-          </option>
-        ))}
-      </select>
-      <button type="submit" value="Send" >Send</button>
-      {isLoading && (<p>로딩중</p>)}
-    </form>
+        <div>
+          <div className="inputGrid">
+            <input
+              className='inputActive'
+              type="email"
+              name="email"
+              value={formData.email}
+              placeholder='이메일을 입력해주세요'
+              onChange={handleInputChange}
+            />
+            <span className="focusBorder">
+              <i></i>
+            </span>
+          </div>
+        </div>
+        <div>
+          <div className="inputGrid">
+            <textarea
+              className='inputActive'
+              type="text"
+              name="message"
+              value={formData.message}
+              placeholder='메세지를 입력해주세요'
+              onChange={handleInputChange}
+            />
+            <span className="focusBorder">
+              <i></i>
+            </span>
+          </div>
+        </div>
+        <button
+          className='button btnPush btnBlueGreen'
+          type="submit"
+          value="Send"
+        >
+          Send
+        </button>
+      </form>
+    </>
   );
 };
