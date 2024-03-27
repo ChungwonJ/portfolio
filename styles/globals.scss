@@ -15,12 +15,6 @@ section{
 
 .container {
   padding: 60px 36px;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-left: 36px;
-  padding-right: 36px;
 }
 
 .button {
@@ -62,7 +56,6 @@ section{
 
 @media (max-width: 499px) {
   .container{
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 10px 20px;
   }
 }
