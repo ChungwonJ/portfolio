@@ -5,7 +5,9 @@ import { WORKLIST } from '@/define'
 function Work() {
   return (
     <>
-      <Result title={'Work'} CARDITEM={WORKLIST}/>
+      <div id='work'>
+        <Result title={'Work'} CARDITEM={WORKLIST} />
+      </div>
     </>
   )
 }

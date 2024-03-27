@@ -5,7 +5,7 @@ import React from 'react'
 function Introduction() {
   return (
     <>
-      <section>
+      <section id='introduction'>
         <div className='container'>
           <h1>About Me</h1>
           <div className='about'>

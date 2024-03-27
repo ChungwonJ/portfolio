@@ -13,9 +13,10 @@ function ProjectCard(props) {
             <p>{item.title}</p>
             <p>작업내용 : {item.content}</p>
             {item.tech && item.tech.length > 0 && <p>Tech : {item.tech}</p>}
+            {item.progress && item.progress.length > 0 && <p>Progress : {item.progress}</p>}
             <div className='cardBtn'>
               <Link className='cardLink button btnPush btnBlueGreen' href={item.link} target='_blank'>VIEW</Link>
-              {item.git && item.git.length > 0 && <Link href={item.git}>GIT</Link>}
+              {item.git && item.git.length > 0 && <Link className='cardLink button btnPush btnBlueGreen' href={item.git} target='_blank'>GIT</Link>}
             </div>
           </div>
         </div>

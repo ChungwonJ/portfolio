@@ -5,7 +5,7 @@ import ReactTypingEffect from 'react-typing-effect';
 function Port() {
   return (
     <>
-      <div className='port'>
+      <div id='port'>
         <Star />
         <div className='portTxt'>
           <p>안녕하세요 정청원입니다 , 저는</p>
