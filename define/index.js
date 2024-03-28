@@ -1,5 +1,5 @@
 export const MENULIST =[
-  { title : 'HOME', link: '#port'},
+  { title : 'Home', link: '#port'},
   { title : 'About', link: '#introduction'},
   { title : 'Work', link: '#work'},
   { title : 'Side', link: '#side'},
