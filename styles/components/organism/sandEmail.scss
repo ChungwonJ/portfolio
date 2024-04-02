@@ -111,3 +111,9 @@
   font-size: 14px;
   color: rgb(197 27 27);
 }
+
+@media (max-width: 499px) {
+  .emailForm{
+    width: 85%;
+  }
+}

@@ -20,7 +20,7 @@ function AboutCard() {
           </div>
           <div>
             <h3>TOOLS</h3>
-            <p>Vs Code, Github, BonoboGit</p>
+            <p>VSCode, Github, BonoboGit</p>
           </div>
         </div>
       </div>

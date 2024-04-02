@@ -1,0 +1,15 @@
+.parallaxsWrap {
+  position: fixed;
+  top: 24%;
+  padding-left: 38%;
+  padding-right: 30px;
+  left: 0;
+  display: flex;
+  gap: 50px;
+}
+
+@media (max-width: 768px) {
+  .parallaxsWrap{
+    padding-left: 15%;
+  }
+}

@@ -84,3 +84,15 @@
     }
   }
 }
+
+@media (max-width: 499px) {
+  .jobCard{
+    width: 55vw;
+  }
+
+  .jobCardGrid{
+    &>h2 {
+      font-size: 20px;
+    }
+  }
+}

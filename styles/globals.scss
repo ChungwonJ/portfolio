@@ -10,6 +10,7 @@
 @import '/styles/components/mocules/aboutCard.scss';
 @import '/styles/components/atoms/spiner.scss';
 @import '/styles/components/organism/sandEmail.scss';
+@import '/styles/components/atoms/parallax.scss';
 
 .componentsName{
   font-size: 60px;
@@ -34,12 +35,9 @@ section{
   z-index: 2;
 }
 
-.parallaxsWrap {
-  position: fixed;
-  top: 24%;
-  padding-left: 38%;
-  padding-right: 30px;
-  left: 0;
-  display: flex;
-  gap: 50px;
+@media (max-width: 499px) {
+  .componentsName{
+    font-size: 36px;
+  }
 }
+

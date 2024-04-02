@@ -73,3 +73,14 @@
     }
   }
 }
+
+@media (max-width: 499px) {
+  .aboutCard{
+    width: 85vw;
+    padding: 10px;
+  }
+
+  .aboutCardGrid{
+    gap: 2vh;
+  }
+}

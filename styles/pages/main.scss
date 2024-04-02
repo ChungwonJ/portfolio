@@ -22,3 +22,20 @@
   white-space: nowrap;
   overflow: hidden;
 }
+
+@media (max-width: 499px) {
+  .portTxt{
+    &>p{
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+
+    &>span{
+      font-size: 20px;
+    }
+  }
+
+  .typingCursor{
+    font-size: 20px;
+  }
+}
