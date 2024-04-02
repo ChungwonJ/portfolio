@@ -13,3 +13,9 @@
     padding-left: 15%;
   }
 }
+
+@media (max-width: 499px) {
+  .parallaxsWrap{
+    gap: 15px;
+  }
+}
