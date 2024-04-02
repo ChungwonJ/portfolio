@@ -1,0 +1,24 @@
+.portTxt{
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: #fff;
+  text-align: center;
+
+  &>p{
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+
+  &>span{
+    font-size: 32px;
+  }
+}
+
+#typing {
+  border-right: .1em solid black;
+  white-space: nowrap;
+  overflow: hidden;
+}

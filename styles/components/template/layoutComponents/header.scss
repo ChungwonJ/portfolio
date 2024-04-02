@@ -1,0 +1,21 @@
+header{
+  position: fixed;
+  top: 0;
+  width: 100vw;
+}
+
+.headerGrid{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.navList{
+  color: #fff;
+  font-size: 36px;
+  cursor: pointer;
+
+  &:hover{
+    opacity: 0.8;
+  }
+}

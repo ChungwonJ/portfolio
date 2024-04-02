@@ -1,0 +1,86 @@
+.jobCard{
+  width: 300px;
+  height: 40vh;
+  background-color: #fff;
+  padding: 24px 32px;
+  border-radius: 0px 50px;
+  border: 1px solid #000;
+
+  &:hover{
+    background-color: #000;
+    border: 1px solid #fff;
+
+    .jobCardGrid {
+      &>h2 {
+        color: #fff;
+      }
+
+      &>p {
+        color: #fff;
+    
+        &:nth-child(3) {
+          color: #fff;
+          border-top: 2px solid #fff;
+        }
+      }
+    }
+
+    .jobCardBtn{
+      &>a{
+        color: #fff;
+    
+        &:nth-child(1){
+          background-color: #fff;
+          color: #000;
+        }
+      }
+    }
+  }
+}
+
+.jobCardGrid {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &>h2 {
+    color: #333;
+    font-size: 26px;
+    font-weight: 700;
+  }
+
+  &>p {
+    color: #333;
+
+    &:nth-child(3) {
+      color: #333;
+      padding-top: 10px;
+      border-top: 2px solid;
+    }
+  }
+}
+
+.jobCardBtn{
+  display: flex;
+  justify-content: space-between;
+
+  &>a{
+    color: #000;
+
+    &:hover{
+      opacity: 0.8;
+    }
+
+    &:nth-child(1){
+      padding: 8px 50px;
+      background-color: #000;
+      color: #fff;
+      font-size: 20px;
+    }
+
+    &:nth-child(2){
+      font-size: 30px;
+    }
+  }
+}

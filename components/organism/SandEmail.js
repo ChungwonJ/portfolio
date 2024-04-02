@@ -1,14 +1,21 @@
 import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
+import { useDispatch } from 'react-redux';
+import { setIsLoading, setNotLoading } from '@/redux/slice/isLoadingSlice';
 
-export default function SendEmail(props) {
+export default function SendEmail() {
+  const dispatch = useDispatch();
   const form = useRef();
-  const [formData, setFormData] = useState({
+
+  const initialFormData = {
     name: '',
     email: '',
     message: '',
-  });
-  const { setIsLoading } = props;
+  };
+
+  const [formData, setFormData] = useState(initialFormData);
+
+  const [errors, setErrors] = useState({});
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -16,32 +23,47 @@ export default function SendEmail(props) {
       ...prevFormData,
       [name]: value,
     }));
+
+    if (errors[name]) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        [name]: '',
+      }));
+    }
+  };
+
+  const validateForm = () => {
+    const newErrors = {};
+    if (!formData.name) newErrors.name = '이름을 입력해주세요.';
+    if (!formData.email) newErrors.email = '이메일을 입력해주세요.';
+    if (!formData.message) newErrors.message = '메세지를 입력해주세요.';
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
   };
 
   const sendEmail = (e) => {
     e.preventDefault();
-    setIsLoading(true);
+    if (!validateForm()) return;
 
+    dispatch(setIsLoading());
     emailjs.sendForm('service_zmjw1bj', 'template_to4e1y7', form.current, 'SsFeyiwkcLWPLI81b')
       .then((result) => {
-        alert('전송에 성공하였습니다')
+        alert('전송에 성공하였습니다.'); 
         console.log(result.text);
-        setIsLoading(false);
+        dispatch(setNotLoading());
+        setFormData(initialFormData);
       }, (error) => {
-        alert('전송에 실패하였습니다. 다시 시도해주세요.')
+        alert('전송에 실패하였습니다. 다시 시도해주세요.'); 
         console.log(error.text);
-        setIsLoading(false);
+        dispatch(setNotLoading());
       });
   };
 
   return (
     <>
-      <form
-        className='emailForm'
-        ref={form}
-        onSubmit={sendEmail}
-      >
-        <div>
+      <section>
+        <form className='emailForm' ref={form} onSubmit={sendEmail}>
           <div className="inputGrid">
             <input
               className='inputActive'
@@ -51,12 +73,10 @@ export default function SendEmail(props) {
               placeholder='이름을 입력해주세요'
               onChange={handleInputChange}
             />
-            <span className="focusBorder">
-              <i></i>
-            </span>
+            <span className="focusBorder"><i></i></span>
           </div>
-        </div>
-        <div>
+          {errors.name && <p className='emailErr'>{errors.name}</p>}
+
           <div className="inputGrid">
             <input
               className='inputActive'
@@ -66,34 +86,25 @@ export default function SendEmail(props) {
               placeholder='이메일을 입력해주세요'
               onChange={handleInputChange}
             />
-            <span className="focusBorder">
-              <i></i>
-            </span>
+            <span className="focusBorder"><i></i></span>
           </div>
-        </div>
-        <div>
+          {errors.email && <p className='emailErr'>{errors.email}</p>}
+
           <div className="inputGrid">
             <textarea
               className='inputActive'
-              type="text"
               name="message"
               value={formData.message}
               placeholder='메세지를 입력해주세요'
               onChange={handleInputChange}
             />
-            <span className="focusBorder">
-              <i></i>
-            </span>
+            <span className="focusBorder"><i></i></span>
           </div>
-        </div>
-        <button
-          className='button btnPush btnBlueGreen'
-          type="submit"
-          value="Send"
-        >
-          Send
-        </button>
-      </form>
+          {errors.message && <p className='emailErr'>{errors.message}</p>}
+
+          <button className='sendEmailBtn' type="submit">Send</button>
+        </form>
+      </section>
     </>
   );
-};
+}

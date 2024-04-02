@@ -1,12 +1,10 @@
 import Footer from "./layoutComponents/Footer";
 import Header from "./layoutComponents/Header";
 
-
-
-export default function Layout({ children , onLanguageChange}) {
+export default function Layout({ children }) {
   return (
     <>
-      <Header onLanguageChange={onLanguageChange }/>
+      <Header />
       {children}
       <Footer />
     </>

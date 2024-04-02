@@ -1,0 +1,16 @@
+footer{
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+}
+
+.footerGrid{
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+}
+
+.mainIcon{
+  font-size: 36px;
+  color: #fff;
+}
