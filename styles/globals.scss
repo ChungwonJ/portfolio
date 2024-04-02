@@ -11,11 +11,12 @@
 @import '/styles/components/atoms/spiner.scss';
 @import '/styles/components/organism/sandEmail.scss';
 @import '/styles/components/atoms/parallax.scss';
+@import '/styles/components/atoms/mouseScroll.scss';
 
 .componentsName{
   font-size: 60px;
   color: rgb(249 247 246 / 10%);
-  position: absolute;
+  position: fixed;
   top: 10%;
   left: 15%;
 }
