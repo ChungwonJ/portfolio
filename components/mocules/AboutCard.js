@@ -16,7 +16,7 @@ function AboutCard() {
           </p>
           <div>
             <h3>SKILLS</h3>
-            <p>#Html, #Css3, #Scss, #React, #Next, #Redux, #Redux-Toolkit, #MongoDb</p>
+            <p>#Html, #Css3, #Scss, #React, #Next, #Redux, #Redux-Toolkit, #MongoDb, #Figma</p>
           </div>
           <div>
             <h3>TOOLS</h3>
